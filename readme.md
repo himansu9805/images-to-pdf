@@ -4,7 +4,7 @@
 
 This is a simple python program which converts a bunch of images into a single PDF file. You just need to specify the path to the directory of images, everything else would be handled by the program.
 
-> `PATH = 'path/to/images'`
+`PATH = 'path/to/images'`
 
 Just replace _path/to/images_ with the path to the directory of images.
 
