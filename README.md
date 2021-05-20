@@ -4,8 +4,23 @@
 
 This is a simple python program which converts a bunch of images into a single PDF file. You just need to specify the path to the directory of images, everything else would be handled by the program.
 
-`PATH = 'path/to/images'`
+### How to use
 
-Just replace _path/to/images_ with the path to the directory of images.
+Just clone the repo and go into the folder "images-to-pdf".
 
-You can find the output file, called output.pdf, in the same directory where all your images are present.
+```
+python3 main.py -p "<path to your directory>"
+```
+Demo command :
+```
+python3 main.py -p "/home/user/My stuff/Photos/"
+```
+
+
+
+
+### Requirements
+
+```
+Pillow==8.2.0
+```
