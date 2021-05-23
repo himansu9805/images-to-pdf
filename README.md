@@ -22,5 +22,5 @@ python3 main.py -p "/home/user/My stuff/Photos/"
 ### Requirements
 
 ```
-Pillow==8.2.0
+    pip install -r requirments.txt
 ```
