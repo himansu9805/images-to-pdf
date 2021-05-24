@@ -2,24 +2,25 @@ try:
     import os
     from PIL import Image,UnidentifiedImageError
     import argparse
+    import pathlib
 except ImportError:
     print("Fulfil all requiremnets from requirements.txt")
 
 
 def imgToPDF(PATH):
+    extensions = [".jpg", ".jpeg",".png",".bmp"]
     try:
         entries = os.listdir(PATH)
         imgList = []
-        for entry in entries:
-            if(entry != entries[0]):
-                # TODO: select only those files which hae extension as jpeg, jpg, png etc.
+        for entry in entries[1:]:     # skipping first entry  
+            if pathlib.Path(entry).suffix in extensions:
                 img = Image.open(PATH + entry)
                 imgList.append(img.convert('RGB'))
 
         pdf = Image.open(PATH + entries[0]).convert('RGB')
-
         pdf.save(PATH + "output.pdf", save_all=True, append_images=imgList)
         print("Your pdf successfully saved as "+PATH + "output.pdf")
+
     except FileNotFoundError:
         print("Your directory is not found")
     except UnidentifiedImageError:
